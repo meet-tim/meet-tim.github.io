@@ -11,27 +11,27 @@ This is a simple Todo web app that allows you to keep track of your tasks and ma
 ## Technologies Used
 The following technologies were used to develop this web app:
 
-Frontend: HTML, CSS, JavaScript, and React.js.
-Backend: Vanilla Javascript.
-Styling: CSS for responsive and visually appealing UI.
+1. Frontend: HTML, CSS, JavaScript, and React.js.
+1. Backend: Vanilla Javascript.
+1. Styling: CSS for responsive and visually appealing UI.
 
 ## Installation
 To run this web app locally, follow these steps:
 
-Clone the repository: git clone https://github.com/meet-tim/meet-tim.github.io.git
-Navigate to the project directory: cd todo-app-main
-Install the dependencies: npm install
-Open your web browser and visit: http://localhost:3000
-Make sure you have Node.js on your machine before running the app.
+1. Clone the repository: git clone https://github.com/meet-tim/meet-tim.github.io.git
+1. Navigate to the project directory: cd todo-app-main
+1. Install the dependencies: npm install
+1. Open your web browser and visit: http://localhost:3000
+1. Make sure you have Node.js on your machine before running the app.
 
 
 
 ## Fork the repository.
-Create a new branch: git checkout -b main
-Make your changes and commit them: git commit -am 'Add new feature'
-Push to the branch: git push origin main
-Submit a pull request.
-Please make sure to follow the project's code style and guidelines.
+1. Create a new branch: git checkout -b main
+1. Make your changes and commit them: git commit -am 'Add new feature'
+1. Push to the branch: git push origin main
+1. Submit a pull request.
+1. Please make sure to follow the project's code style and guidelines.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
