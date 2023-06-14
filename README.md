@@ -1,4 +1,4 @@
-### Todo Web App
+# Todo Web App
 This is a simple Todo web app that allows you to keep track of your tasks and manage your to-do lists. It provides a user-friendly interface where you can add, edit, and delete tasks, mark tasks as completed, and organize them into different categories.
 
 ## Features
@@ -8,7 +8,7 @@ Sorting and Filtering: Sort tasks by completion status.
 Responsive Design: The app is designed to work seamlessly on different devices and screen sizes.
 Light and Dark mode:User can switch between light and dark mode
 
-# Technologies Used
+## Technologies Used
 The following technologies were used to develop this web app:
 
 Frontend: HTML, CSS, JavaScript, and React.js.
