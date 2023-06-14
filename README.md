@@ -2,11 +2,11 @@
 This is a simple Todo web app that allows you to keep track of your tasks and manage your to-do lists. It provides a user-friendly interface where you can add, edit, and delete tasks, mark tasks as completed, and organize them into different categories.
 
 ## Features
--Task Management: Add new tasks, mark them as completed, and delete tasks.
--Task Categories: Organize your tasks into different categories for better organization.
--Sorting and Filtering: Sort tasks by completion status. 
--Responsive Design: The app is designed to work seamlessly on different devices and screen sizes.
--Light and Dark mode:User can switch between light and dark mode
+1.Task Management: Add new tasks, mark them as completed, and delete tasks.
+1.Task Categories: Organize your tasks into different categories for better organization.
+1.Sorting and Filtering: Sort tasks by completion status. 
+1.Responsive Design: The app is designed to work seamlessly on different devices and screen sizes.
+1.Light and Dark mode:User can switch between light and dark mode
 
 ## Technologies Used
 The following technologies were used to develop this web app:
