@@ -12,7 +12,7 @@ Light and Dark mode:User can switch between light and dark mode
 The following technologies were used to develop this web app:
 
 Frontend: HTML, CSS, JavaScript, and React.js.
-Backend: Vanilla Javascript[no framework]
+Backend: Vanilla Javascript[no framework].
 Styling: CSS for responsive and visually appealing UI.
 
 ## Installation
