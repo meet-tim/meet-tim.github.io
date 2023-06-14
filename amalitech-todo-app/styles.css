@@ -1,19 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 :root{
---primary:hsl(220, 98%, 61%);
---VeryLightGray: hsl(0, 0%, 98%);
---VeryLightGrayishBlue: hsl(236, 33%, 92%);
---LightGrayishBlue: hsl(233, 11%, 84%);
---DarkGrayishBlue: hsl(236, 9%, 61%);
---VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+--primary:#3a7bfd;
+--VeryLightGray: #fafafa;
+--VeryLightGrayishBlue: #e4e5f1;
+--LightGrayishBlue: #d2d3db;
+--DarkGrayishBlue: #9394a5;
+--VeryDarkGrayishBlue: #484b6a;
+--bg-img:url('./images/bg-desktop-light.jpg');
+
+}
+
+.dark-mode{
+    --primary:#3a7bfd;
+    --VeryLightGray: #25273c;
+    --VeryLightGrayishBlue: #161722;
+    --LightGrayishBlue: #777a92;
+    --DarkGrayishBlue: #4d5066;
+    --VeryDarkGrayishBlue: hsl(236, 33%, 92%);
+    --bg-img:url('./images/bg-desktop-dark.jpg');
 }
 
 body{
+    transition: 0.5s ease-out;
     font-family: 'Josefin Sans', sans-serif;
     margin:0;
     font: 18px;  
     font-weight: 400;  
+    background-color: var(--VeryLightGrayishBlue);
 }
 
 *{
@@ -34,32 +48,71 @@ header{
     padding-top: 4rem;
 }
 
+button{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    z-index: 999;
+}
+
+header button .moon{
+    display: unset;
+}
+
+header button .sun{
+    display: none;
+}
+
+header button.dark .moon{
+    display: none;
+}
+
+header button.dark .sun{
+    display: unset;
+}
+
 form{
     width: 100%;
+
 }
 
 input{
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.219);
+    background-color: var(--VeryLightGray);
     width: 100%;
     padding: 1rem;
     margin-top: 1rem;
     border-radius: .3rem;
     border: 0px;
+    color:var(--VeryDarkGrayishBlue)
+    
 }
+
+
+input:focus{
+    outline: none;
+    color: var(--VeryDarkGrayishBlue) ;
+    padding-left: 20px;
+}
+
 .container{
     max-width: 500px;
     margin: 0 auto;
     padding:0 40px;
 }
 
+header svg{
+    cursor: pointer;
+}
+
 .logo{
     font-weight: bolder;
-    color: var(--VeryLightGray);
+    color: white;
     letter-spacing: .5rem;
 }
 
 
 .image{
-    background: url('./images/bg-desktop-light.jpg');
+    background: var(--bg-img);
     position: absolute;
     top: 0;
     left: 0;
@@ -81,19 +134,65 @@ input{
     padding: 1rem;
     border-bottom: .2px solid rgba(0, 0, 0, 0.267);
     display: flex;
-    
+    justify-content: space-between;
+    align-items: center;
 }
 
+
+
+
 .checkmark{
-    border-radius: 100%;
     border: 1px solid var(--DarkGrayishBlue);
     width: 1.1rem;
     margin-right: 1rem;
+    border-radius: 50%;
+    padding-left: .12rem;
+    cursor: pointer;
+    background-color:var(--VeryLightGray) ;
+}
+
+.checkmark svg{
+    display: none;
+    pointer-events: none; 
+}
+
+.checkmark:hover{
+    border: 1px solid var(--primary);
 }
 
 .checkmark.checked{
     background-image:linear-gradient(to right, rgb(87, 221, 255),rgb(192, 88, 243));
     
+}
+
+.checkmark.checked svg{
+    display: unset;
+
+}
+
+.todo-item{
+    cursor: pointer;
+}
+
+.todo-item.checked{
+    text-decoration: line-through;
+    color: var(--LightGrayishBlue);
+}
+.todo section{
+    display: flex;
+}
+
+.close{
+    cursor: pointer;
+    
+}
+
+.close svg{
+    pointer-events: none;
+}
+
+.close svg path{
+    fill: var(--DarkGrayishBlue);
 }
 
 
@@ -124,6 +223,22 @@ input{
     color: var(--primary);
 }
 
+.bottom p:hover{
+    color: var(--VeryDarkGrayishBlue);
+    cursor: pointer;
+}
+
+.bottom li:hover{
+    color: var(--VeryDarkGrayishBlue);
+    cursor: pointer;
+}
+
 .attribution{
     margin-top: 2rem;
+}
+
+
+.todo.dragging{
+    opacity: .5;
+    background-color: var(--DarkGrayishBlue);
 }
