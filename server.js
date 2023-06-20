@@ -175,6 +175,10 @@ function saveLocalTodos(todo) {
 
 //fetch todo values from the localStorage
 function getLocalTodos() {
+    if(localStorage.getItem("mode") === "dark") {
+        changeMode()
+    } 
+
     let todos;
     if(localStorage.getItem("todos") === null) {
         todos = [];
@@ -283,6 +287,12 @@ function removeLocalTodos(todo) {
 function changeMode(){
     document.documentElement.classList.toggle("dark-mode")
     toggler.classList.toggle("dark")
+    if (toggler.classList.contains("dark")){
+        localStorage.setItem("mode", "dark");
+    }else{
+        localStorage.setItem("mode", "light");
+    }
+    
 }
 
 //clear completed
