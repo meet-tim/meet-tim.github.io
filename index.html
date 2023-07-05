@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Amalitech | Todo app</title>
+  <title>Frontend Mentor | Todo app</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -25,6 +25,7 @@
       </button>
         </header>
     <form id="form-control" action="">
+      <button type="submit" class="btn"></button>
       <input required="true" id="form-input" type="text" placeholder="Create a new todo..." class="todo-input">   .
       
     </form>
@@ -35,16 +36,30 @@
     <!-- filter -->
     <div class="bottom">
       <p class="counter">0 items left</p>
-      <ul id="filter">
+      <ul class="filter">
         <li class="selected">All</li>
         <li>Active</li>
         <li>Completed</li>
       </ul>
       <p class="clearBtn">Clear Completed</p>
     </div>
+
+    <div class="mobile-only">
+      <ul class="filter">
+        <li class="selected">All</li>
+        <li>Active</li>
+        <li>Completed</li>
+      </ul>
+    </div>
+
+    
+    <div class="footer">
+      Drag and drop to reorder items
+    </div>
+
   </div>
  
-    
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Timothy Hobbs Kumah</a>.

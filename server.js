@@ -2,15 +2,18 @@ const toggler =  document.querySelector(".toggler")
 const myform = document.getElementById("form-control")
 const todoInput = document.getElementById("form-input")
 const todoList = document.querySelector(".todo-list");
-const filterElement = document.getElementById("filter")
+const filterElement = document.getElementsByClassName("filter")
 const clearBtn = document.querySelector(".clearBtn")
 const counter = document.querySelector(".counter")
 
 
-//retriev filter buttons
-const filterButtons = filterElement.childNodes;
-filterButtons.forEach((btn) => {
-    btn.addEventListener("click",filterTodo);
+//retrieve filter buttons
+
+const filterUl = [...filterElement];
+filterUl.forEach((ul) => {
+    ul.childNodes.forEach((btn) => {
+        btn.addEventListener("click",filterTodo);
+    })
     
 })
 
@@ -108,6 +111,12 @@ function addTodo(event) {
     todoDiv.setAttribute("draggable",true)
     todoDiv.addEventListener("dragstart",()=>{todoDiv.classList.add("dragging")})
     todoDiv.addEventListener("dragend",dragEnd)
+    todoDiv.addEventListener("mouseenter",()=>{
+        trashButton.style.display = "block"
+    })
+    todoDiv.addEventListener("mouseleave",()=>{
+        trashButton.style.display = "none"
+    })
 
     todoList.prepend(todoDiv);
     todoInput.value = "";
@@ -155,7 +164,25 @@ function deleteCheck(e) {
             }
            
         })
+
+        //switch to completed todos
+        todoList.querySelectorAll(".todo").forEach(function(todo) {
+            if(todo.classList.contains("checked")) {
+                todo.style.display = "flex";
+            } else {
+                todo.style.display = "none";
+            }
+
+            //apply active styling
+            filterUl.forEach((ul) => {
+                ul.children[0].classList.remove("selected");
+                ul.children[1].classList.remove("selected");
+                ul.children[2].classList.add("selected");
+            })
+           
+        })
         localStorage.setItem("todos", JSON.stringify(todos));
+        
         //update count
         remainingTodo();        
     }
@@ -213,6 +240,15 @@ function getLocalTodos() {
             todoDiv.setAttribute("draggable",true)
             todoDiv.addEventListener("dragstart",()=>{todoDiv.classList.add("dragging")})
             todoDiv.addEventListener("dragend",dragEnd)
+            todoDiv.addEventListener("mouseenter",()=>{
+                trashButton.style.display = "block"
+            })
+            todoDiv.addEventListener("mouseleave",()=>{
+                trashButton.style.display = "none"
+            })
+        
+
+
             
 
             todoList.appendChild(todoDiv);
@@ -251,6 +287,13 @@ function getLocalTodos() {
             todoDiv.setAttribute("draggable",true)
             todoDiv.addEventListener("dragstart",()=>{todoDiv.classList.add("dragging")})
             todoDiv.addEventListener("dragend",dragEnd)
+            todoDiv.addEventListener("mouseenter",()=>{
+                trashButton.style.display = "block"
+            })
+            todoDiv.addEventListener("mouseleave",()=>{
+                trashButton.style.display = "none"
+            })
+        
 
             todoList.appendChild(todoDiv);
 
