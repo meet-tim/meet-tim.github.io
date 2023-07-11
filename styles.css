@@ -72,26 +72,29 @@ header button.dark .sun{
 
 form{
     width: 100%;
-
-}
-
-input{
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.219);
     background-color: var(--VeryLightGray);
     width: 100%;
     padding: 1rem;
     margin-top: 1rem;
     border-radius: .3rem;
+    margin-bottom: .3rem;
+}
+
+input{
+    background-color: var(--VeryLightGray);
     border: 0px;
     color:var(--VeryDarkGrayishBlue)
     
 }
 
 
+
 input:focus{
     outline: none;
     color: var(--VeryDarkGrayishBlue) ;
     padding-left: 20px;
+    caret-color: var(--primary);
 }
 
 .container{
@@ -99,6 +102,18 @@ input:focus{
     margin: 0 auto;
     padding:0 40px;
 }
+
+.btn{
+    border: 1px solid var(--DarkGrayishBlue);
+    width: 1.1rem;
+    height: 1rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    padding-left: .12rem;
+    cursor: pointer;
+    background-color:var(--VeryLightGray) ;
+}
+
 
 header svg{
     cursor: pointer;
@@ -128,6 +143,9 @@ header svg{
     background-color: var(--VeryLightGray);
     border-radius: .3rem;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.219);
+    max-height: 20rem;
+    overflow: auto;
+    margin-top: 1rem;
 }
 .todo{
     width:100%;
@@ -184,6 +202,7 @@ header svg{
 
 .close{
     cursor: pointer;
+    display: none;
     
 }
 
@@ -215,11 +234,21 @@ header svg{
     
 }
 
+.footer{
+    display: flex;
+    color: var(--DarkGrayishBlue);
+    justify-content: center;
+    margin-top: 1rem;
+}
 .bottom li{
     padding: 0 .2rem;
 }
 
 .bottom li.selected{
+    color: var(--primary);
+}
+
+.mobile-only li.selected{
     color: var(--primary);
 }
 
@@ -242,3 +271,56 @@ header svg{
     opacity: .5;
     background-color: var(--DarkGrayishBlue);
 }
+
+.mobile-only ul{
+    display: none;
+}
+
+@media only screen and (max-width: 540px) {
+
+    .bottom ul{
+        display:none;
+    }
+
+    .mobile-only ul{
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--DarkGrayishBlue);
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        background-color: var(--VeryLightGray);
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.219);
+        padding: 1rem;
+        border-bottom-left-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+        margin-top: 1rem;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .container{
+        padding:0 10px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: var(--VeryLightGray);
+    border-radius: 2rem;
+  }
+  
+  /* Handle */
+ ::-webkit-scrollbar-thumb {
+    background: var(--VeryDarkGrayishBlue);
+    border-radius: 2rem;
+  }
+  
+  /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+    background: var(--DarkGrayishBlue);
+ }
