@@ -165,7 +165,7 @@ function deleteCheck(e) {
            
         })
 
-        if(!todo_item.classList.contains("checked")){
+        if(todo_item.classList.contains("checked")&&!filterUl[0].children[0].classList.contains("selected")){
             todoList.querySelectorAll(".todo").forEach(function(todo) {
                 if(!todo.classList.contains("checked")) {
                     todo.style.display = "flex";
@@ -181,7 +181,7 @@ function deleteCheck(e) {
                 })
                
             })
-        }else{
+        }else if(!todo_item.classList.contains("checked")&&!filterUl[0].children[0].classList.contains("selected")){
             todoList.querySelectorAll(".todo").forEach(function(todo) {
                 if(todo.classList.contains("checked")) {
                     todo.style.display = "flex";
